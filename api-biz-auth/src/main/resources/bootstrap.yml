@@ -1,0 +1,41 @@
+spring:
+  application:
+    name: api-auth
+  main:
+    allow-bean-definition-overriding: true
+  cloud:
+    nacos:
+      discovery:
+        server-addr: 127.0.0.1:8848
+
+dubbo:
+  consumer:
+    check: false
+  scan:
+    base-packages: cn.vesns.oauth2.service
+  protocol:
+    name: dubbo
+    port: -1
+    serialization: kryo
+  registry:
+    address: nacos://127.0.0.1:8848
+  # 负载均衡
+  provider:
+    loadbalance: roundrobin
+
+server:
+  port: 9001
+  servlet:
+    context-path: /api-auth
+logging:
+  config: classpath:logback-spring.xml
+
+security:
+  oauth2:
+    client:
+      client-id: client
+      client-secret: secret
+      access-token-uri: http://localhost:9001/api-authoauth/token
+      user-authorization-uri: http://localhost:9001/api-auth/oauth/authorize
+    resource:
+      token-info-uri: http://localhost:9001/api-auth/oauth/check_token
