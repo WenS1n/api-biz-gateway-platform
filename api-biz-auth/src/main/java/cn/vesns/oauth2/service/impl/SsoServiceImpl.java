@@ -1,5 +1,6 @@
 package cn.vesns.oauth2.service.impl;
 
+import cn.vesns.common.IdUtils;
 import cn.vesns.oauth2.dto.LoginInfo;
 import cn.vesns.oauth2.dto.LoginParam;
 import cn.vesns.oauth2.dto.RegisterUserDTO;
@@ -25,6 +26,7 @@ import org.springframework.stereotype.Service;
 
 import javax.annotation.Resource;
 import javax.servlet.http.HttpServletRequest;
+import java.util.HashMap;
 import java.util.Map;
 import java.util.Objects;
 

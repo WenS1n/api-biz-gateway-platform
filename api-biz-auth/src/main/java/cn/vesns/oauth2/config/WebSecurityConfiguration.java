@@ -74,7 +74,6 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
     @Override
     public void configure(WebSecurity web) throws Exception {
         web.ignoring().antMatchers("/oauth/user/login",
-
                 "/v2/api-docs",
                 "/v2/api-docs-ext",
                 "/doc.html",
@@ -82,7 +81,7 @@ public class WebSecurityConfiguration extends WebSecurityConfigurerAdapter {
                 "/webjars/**",
                 "/swagger-resources/**",
                 "/oauth/authorize",
-                "/cloud-business-oauth2/**");
+                "/api-auth/**");
     }
 
     /**

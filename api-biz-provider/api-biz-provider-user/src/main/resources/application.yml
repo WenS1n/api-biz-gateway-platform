@@ -1,6 +1,6 @@
 spring:
   application:
-    name: cloud-provider-user
+    name: api-biz-provider-user
   main:
     allow-bean-definition-overriding: true
   datasource:
@@ -33,10 +33,12 @@ dubbo:
   # 负载均衡
   provider:
     loadbalance: roundrobin
-logging:
-  config: classpath:logback-spring.xml
 mybatis-plus:
   mapper-locations: classpath:/mapper/*.xml
   type-aliases-package: cn.vesns.provider.user.pojo.*
   configuration:
     log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+
+logging:
+  level.org.springframework.boot.autoconfigure: error #spring的自动装配日志只打error，否则debug输出的会打印很多自动装配的log信息到控制台
+  config: classpath:logback.xml

@@ -4,8 +4,7 @@ import com.alibaba.fastjson.JSON;
 import com.alibaba.fastjson.serializer.SerializeConfig;
 import com.alibaba.fastjson.serializer.SerializerFeature;
 import com.alibaba.fastjson.serializer.SimpleDateFormatSerializer;
-import com.sun.org.slf4j.internal.Logger;
-import com.sun.org.slf4j.internal.LoggerFactory;
+import lombok.extern.slf4j.Slf4j;
 import org.apache.dubbo.common.utils.StringUtils;
 import org.springframework.stereotype.Component;
 
@@ -18,9 +17,9 @@ import java.util.Map;
  * @date 2020/9/17 16:06
  */
 @Component
+@Slf4j
 public class JsonUtil {
 
-    private static Logger log = LoggerFactory.getLogger(JsonUtil.class);
 
     private static SerializeConfig config;
 

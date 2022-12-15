@@ -1,3 +1,6 @@
+server:
+  port: 9999
+
 spring:
   application:
     name: api-gateway
@@ -5,7 +8,6 @@ spring:
     allow-bean-definition-overriding: true
   cloud:
     gateway:
-
       discovery:
         locator:
           # 是否开启，默认为 false 关闭
@@ -20,7 +22,15 @@ spring:
     nacos:
       discovery:
         server-addr: 127.0.0.1:8848
+      config:
+        # 配置中心地址
+        server-addr: 127.0.0.1:8848
+        # 配置文件格式
+        file-extension: yml
+        # 共享配置
+        shared-configs:
+          - application-${spring.profiles.active}.${spring.cloud.nacos.config.file-extension
 logging:
-  config: classpath:logback-spring.xml
-server:
-  port: 9999
+  level.org.springframework.boot.autoconfigure: error #spring的自动装配日志只打error，否则debug输出的会打印很多自动装配的log信息到控制台
+  config: classpath:logback.xml
+
