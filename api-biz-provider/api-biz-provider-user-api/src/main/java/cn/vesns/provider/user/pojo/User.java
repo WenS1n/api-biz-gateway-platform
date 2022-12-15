@@ -1,5 +1,6 @@
 package cn.vesns.provider.user.pojo;
 
+import cn.vesns.common.base.po.BasePO;
 import com.baomidou.mybatisplus.annotation.IdType;
 import com.baomidou.mybatisplus.annotation.TableId;
 import com.baomidou.mybatisplus.annotation.TableName;
@@ -24,16 +25,15 @@ import java.util.Date;
 @NoArgsConstructor
 @TableName("user")
 @ApiModel("用户表")
-public class User implements Serializable {
+public class User extends BasePO implements Serializable {
 
-    private static final long serialVersionUID = 1L;
 
     /**
      * id
      */
-    @TableId(type = IdType.AUTO)
+    @TableId(type = IdType.ID_WORKER_STR)
     @ApiModelProperty(value = "序号", required = true)
-    private Integer id;
+    private Integer userId;
 
     /**
      * 用户名
@@ -59,11 +59,7 @@ public class User implements Serializable {
     @ApiModelProperty(value = "操作时间", required = true)
     private Date operateTime;
 
-    /**
-     * 盐
-     */
-//    @ApiModelProperty(value = "盐", required = true)
-//    private String salt;
+
 
     /**
      * 状态

@@ -1,5 +1,6 @@
 package cn.vesns.common.config.mybatis;
 
+import com.baomidou.mybatisplus.core.config.GlobalConfig;
 import com.baomidou.mybatisplus.core.injector.ISqlInjector;
 import com.baomidou.mybatisplus.extension.injector.LogicSqlInjector;
 import com.baomidou.mybatisplus.extension.plugins.PaginationInterceptor;
@@ -38,5 +39,12 @@ public class MybatisPlusConfig {
     @Bean
     public ISqlInjector sqlInjector() {
         return new LogicSqlInjector();
+    }
+
+    @Bean
+    public GlobalConfig globalConfig() {
+        GlobalConfig globalConfig = new GlobalConfig();
+        globalConfig.setMetaObjectHandler(new MetaHandler());
+        return globalConfig;
     }
 }

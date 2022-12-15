@@ -14,6 +14,7 @@
     <modules>
         <module>api-biz-common-config</module>
         <module>api-biz-common-utils</module>
+        <module>api-biz-common-base</module>
     </modules>
 
 
