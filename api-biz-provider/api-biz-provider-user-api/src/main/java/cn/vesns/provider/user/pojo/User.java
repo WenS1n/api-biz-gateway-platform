@@ -23,7 +23,7 @@ import java.util.Date;
 @Data
 @AllArgsConstructor
 @NoArgsConstructor
-@TableName("user")
+@TableName("sys_user")
 @ApiModel("用户表")
 public class User extends BasePO implements Serializable {
 
@@ -33,7 +33,7 @@ public class User extends BasePO implements Serializable {
      */
     @TableId(type = IdType.ID_WORKER_STR)
     @ApiModelProperty(value = "序号", required = true)
-    private Integer userId;
+    private Long userId;
 
     /**
      * 用户名

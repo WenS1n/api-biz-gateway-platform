@@ -6,13 +6,12 @@ import com.fasterxml.jackson.annotation.JsonFormat;
 import lombok.Data;
 import org.joda.time.DateTime;
 
+import java.io.Serializable;
+
 @Data
-public abstract class BasePO {
+public abstract class BasePO implements Serializable {
 
     private static final long serialVersionUID = 1L;
-
-
-
 
     /**
      * 创建时间
